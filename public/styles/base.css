@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Skranji|ZCOOL+KuaiLe");
+@import url("https://fonts.googleapis.com/css?family=Oldenburg");
+
+
+html {
+    min-height: 150vw;
+    position: relative;
+  }
+
+
+  body {
+    background-color: #999;
+    color: white;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+  }
+
+  header > h1 {
+    position: center;
+    font-size: 5vw;
+    margin-left: 4vw;
+    line-height: 16vw;
+    font-family: "Oldenburg", cursive;
+  }
+  
+  h2{
+    font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+.username,.password{
+    font-family: 'Skranji', cursive;
+}
+
+h6{
+    float: left;
+    font-size: 20px;
+    font-family: 'ZCOOL KuaiLe', cursive;
+}
