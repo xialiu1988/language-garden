@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -19,9 +20,11 @@
   "homepage": "https://github.com/xialiu1988/language-garden#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "pg": "^7.7.1",
     "superagent": "^4.0.0"
-  }
+  },
+  "devDependencies": {}
 }
