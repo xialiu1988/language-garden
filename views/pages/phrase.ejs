@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+   <%- include('.././layout/head') %>
+
+<body>
+      <h6>Hello, <br>Welcome ON Board!<br><a class="logout" href="/logout">LOGOUT</a></h6>
+      <%- include('.././layout/header') %>
+       
+     <ul>
+      <% textarr.forEach(text=>{ %>
+         <li>
+            <p><%= text %></p>
+         </li>
+
+         <% }) %>     
+     </ul>
+       
+     <form action='/phrase-translate' method='GET'>
+      <select name='phraselist' id='Phrases'>
+         <% langs.forEach(lang=>{ %>
+            <option value="<%= lang[0] %>">
+               <%= lang[1] %>
+            </option>
+
+            <% }) %>     
+           
+      </select>
+    
+     </form>
+
+</body>
+</html>

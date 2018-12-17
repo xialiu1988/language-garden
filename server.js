@@ -17,6 +17,15 @@ client.connect();
 client.on('error', err => console.log(err));
 
 
+const {Translate} = require('@google-cloud/translate');
+const projectId ='my-project-1543967511521';
+const translate = new Translate({
+  projectId: projectId,
+});
+
+
+
+
 app.get('/',(req,res)=>{
   res.render('../views/pages/index');
 
@@ -42,16 +51,55 @@ app.get('/logout',(req,res)=>{
 
 
 
-
-app.get('/phrases',getPhrase);
-function getPhrase(req,res){
-
-
+// // The text to translate
+// const text = 'Hello, world!';
+// The target language
 
 
+// Translates some text into Russian
+// translate
+//   .translate(text, target)
+//   .then(results => {
+//     const translation = results[0];
+
+//     console.log(`Text: ${text}`);
+//     console.log(`Translation: ${translation}`);
+//   })
+//   .catch(err => {
+//     console.error('ERROR:', err);
+//   });
+
+
+
+var textgroup=['Thanks so much!','how are you','Good Morning!','Good afternoon!','where are you from','what is going on?','can you help me?','where is restroom?','do you know...?','That\'s awesome!','sorry i cannot..','what is your name?','what language you speak?','do you want a drink?'];
+var languages=[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic']];
+app.get('/phrases',getphrases);
+function getphrases(req,res){
+
+  res.render('../views/pages/phrase',{textarr:textgroup,langs:languages});
 }
 
 
+
+app.get('/phrase-translate',dotranslate);
+function dotranslate(req,res){
+  let target=req.body.phraselist;
+  textgroup.forEach(text=>{
+
+    translate
+      .translate(text, target)
+      .then(results => {
+        const translation = results[0];
+
+        console.log(`Text: ${text}`);
+        console.log(`Translation: ${translation}`);
+      })
+      .catch(err => {
+        console.error('ERROR:', err);
+      });
+  })
+
+}
 
 
 
