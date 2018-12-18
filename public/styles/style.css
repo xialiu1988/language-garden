@@ -2,8 +2,8 @@ body {
     background-color: #000000; 
     margin: 0px; 
     overflow: hidden;
-    display: block;
+    /* display: block;
     width: 100vw;
     height: 100vh;
-    position: fixed;
+    position: fixed; */
  }
