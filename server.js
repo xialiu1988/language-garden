@@ -2,7 +2,7 @@ const express=require('express');
 const app=express();
 
 const PORT=process.env.PORT||3000;
-const superagent=require('superagent');
+
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -18,7 +18,7 @@ client.on('error', err => console.log(err));
 
 
 const {Translate} = require('@google-cloud/translate');
-const projectId ='my-project-1543967511521';
+const projectId ='language-garden';
 const translate = new Translate({
   projectId: projectId,
 });
@@ -72,7 +72,7 @@ app.get('/logout',(req,res)=>{
 
 
 var textgroup=['Thanks so much!','how are you','Good Morning!','Good afternoon!','where are you from','what is going on?','can you help me?','where is restroom?','do you know...?','That\'s awesome!','sorry i cannot..','what is your name?','what language you speak?','do you want a drink?'];
-var languages=[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic']];
+var languages=[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic'],['zh-CN','Chinese Simplified'],['es','Spanish'],['it','Italian'],['hi','Hindi'],['bn','Bengali'],['pt','Portugese'],['ru','Russian'],['ja','Japanese'],['ms','Malay'],['ko','Korean'],['fa','Persian'],['fr','French'],['el','Greek'],['tr','Turkish'],['uk','Ukranian'],['ur','Urdu'],['sw','Swahili']];
 app.get('/phrases',getphrases);
 function getphrases(req,res){
 
@@ -81,25 +81,12 @@ function getphrases(req,res){
 
 
 
-app.get('/phrase-translate',dotranslate);
-function dotranslate(req,res){
-  let target=req.body.phraselist;
-  textgroup.forEach(text=>{
 
-    translate
-      .translate(text, target)
-      .then(results => {
-        const translation = results[0];
 
-        console.log(`Text: ${text}`);
-        console.log(`Translation: ${translation}`);
-      })
-      .catch(err => {
-        console.error('ERROR:', err);
-      });
-  })
 
-}
+
+
+
 
 
 
