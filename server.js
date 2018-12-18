@@ -49,6 +49,10 @@ app.get('/logout',(req,res)=>{
 
 });
 
+app.get('/game', getgame);
+function getgame(req, res){
+  res.render('../views/pages/game');
+}
 
 
 var textgroup=['Thanks so much!','how are you','Good Morning!','Good afternoon!','where are you from','what is going on?','can you help me?','where is restroom?','do you know...?','That\'s awesome!','sorry i cannot..','what is your name?','what language you speak?','do you want a drink?'];

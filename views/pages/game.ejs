@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
-
-   <%- include('.././layout/head') %>
+<!-- 
+  <%- include('.././layout/head') %> -->
+<!-- <head>
+  <title>Greeting Game</title>    
+</head> -->
 
 <body>
-        <h6>Hello, <%=data%>!<br>Welcome ON Board!<br><a class="logout" href="/logout">LOGOUT</a></h6>
-        <%- include('.././layout/header') %>
+		<header>
+			<link rel="stylesheet" href="/styles/gaming.css">
+			<h1>Greetings from Around the World</h1>
+		</header>
+	<div class="container">
+    <div class="underscore">_ _ _ _</div>
+    <div class="correctletters">Correct Letters</div>
+    <div class="incorrectletters">Incorrect Letters</div>
+	</div>
+	
 
-        
 </body>
+<script src='/hangman.js'></script>
 </html>
