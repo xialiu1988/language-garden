@@ -38,6 +38,7 @@ document.addEventListener('keypress', (event) => {
       alert('You are the winner!');
     }
   } else {
+    //populate incorrect letters
     incorrect.push(keyletter);
     incorrectletters[0].innerHTML = incorrect
   }
