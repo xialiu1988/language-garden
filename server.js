@@ -17,6 +17,15 @@ client.connect();
 client.on('error', err => console.log(err));
 
 
+const {Translate} = require('@google-cloud/translate');
+const projectId ='language-garden';
+const translate = new Translate({
+  projectId: projectId,
+});
+
+
+
+
 app.get('/',(req,res)=>{
   res.render('../views/pages/index');
 
@@ -42,29 +51,80 @@ app.get('/logout',(req,res)=>{
 
 
 
-///////// get phrase function
-app.get('/phrases',getPhrase);
-function getPhrase(req,res){
-  let SQL = 'SELECT * from phrases;';
-  return client.query(SQL)
-    .then(results => res.render('index', {results: results.rows}))
-    .catch(err => console.error(err));
+// // The text to translate
+// const text = 'Hello, world!';
+// The target language
 
+
+// Translates some text into Russian
+// translate
+//   .translate(text, target)
+//   .then(results => {
+//     const translation = results[0];
+
+//     console.log(`Text: ${text}`);
+//     console.log(`Translation: ${translation}`);
+//   })
+//   .catch(err => {
+//     console.error('ERROR:', err);
+//   });
+
+
+
+var textgroup=['Thanks so much!','how are you','Good Morning!','Good afternoon!','where are you from','what is going on?','can you help me?','where is restroom?','do you know...?','That\'s awesome!','sorry i cannot..','what is your name?','what language you speak?','do you want a drink?'];
+var languages=[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic']];
+app.get('/phrases',getphrases);
+function getphrases(req,res){
+
+  res.render('../views/pages/phrase',{textarr:textgroup,langs:languages});
 }
 
 
-app.get('/dialogue',getdialogue);
-function getdialogue(req,res){
-  let SQL ='SELECT * from dialogue;';
-  return client.query(SQL)
-    .then(results => res.render('index', {results: results.rows}))
-    .catch(err => console.error(err));
+
+app.get('/phrase-translate',dotranslate);
+function dotranslate(req,res){
+  let target=req.body.phraselist;
+  textgroup.forEach(text=>{
+
+    translate
+      .translate(text, target)
+      .then(results => {
+        const translation = results[0];
+
+        console.log(`Text: ${text}`);
+        console.log(`Translation: ${translation}`);
+      })
+      .catch(err => {
+        console.error('ERROR:', err);
+      });
+  })
+
 }
 
+ var dialoguegroup =['Greetings','sports','Direction','food','weather']
+ var translate =[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic']];
+ app.get('/dialogues',getdialogues);
+ function getdialogues(req,res){}
 
+app.getapp.get('/dialogue-translate',translateDialogue);
+function translateDialogue(req,res){
+  let target=req.body.dialoguelist;
+  dialoguegroup.forEach(text=>{
 
+    translate
+      .translate(group, target)
+      .then(results => {
+        const translation = results[0];
 
+        console.log(`Text: ${text}`);
+        console.log(`Translation: ${translation}`);
+      })
+      .catch(err => {
+        console.error('ERROR:', err);
+      });
+  })
 
+}
 
 
 
