@@ -101,30 +101,16 @@ function dotranslate(req,res){
 
 }
 
- var dialoguegroup =['Greetings','sports','Direction','food','weather']
- var translate =[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic']];
- app.get('/dialogues',getdialogues);
- function getdialogues(req,res){}
-
-app.getapp.get('/dialogue-translate',translateDialogue);
-function translateDialogue(req,res){
-  let target=req.body.dialoguelist;
-  dialoguegroup.forEach(text=>{
-
-    translate
-      .translate(group, target)
-      .then(results => {
-        const translation = results[0];
-
-        console.log(`Text: ${text}`);
-        console.log(`Translation: ${translation}`);
-      })
-      .catch(err => {
-        console.error('ERROR:', err);
-      });
-  })
-
+var dialoguegroup =['Greetings','sports','Direction','food','weather']
+var change =[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic']];
+app.get('/dialogue',getdialogue);
+function getdialogue(req,res){
+  res.render('../views/pages/dialogue',{textarr:dialoguegroup,langs:change});
 }
+
+
+
+
 
 
 

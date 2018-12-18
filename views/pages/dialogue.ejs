@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+   <%- include('.././layout/head') %>
+
+<body>
+    <h6>Hello, <br>Welcome ON Board!<br><a class="logout" href="/logout">LOGOUT</a></h6>
+        <%- include('.././layout/header') %>
+        <ul>
+            <% textarr.forEach(text=>{ %>
+               <li>
+                  <a href= "#"><%= text %></a>
+               </li>
+      
+               <% }) %>     
+           </ul>
+
+           <form action='/dialogue-translate' method='GET'>
+            <select name='dialoguelist' id='dialogue'>
+               <% langs.forEach(lang=>{ %>
+                  <option value="<%= lang[0] %>">
+                     <%= lang[1] %>
+                  </option>
+      
+                  <% }) %>     
+            </select>  
+
+
+</body>
+</html>
