@@ -7,3 +7,32 @@ body {
     height: 100vh;
     position: fixed; */
  }
+
+ .dialoguebox {
+     display: none;
+
+ }
+ .dialoguebox1{
+    display: none;
+
+}
+.dialoguebox2{
+    display: none;
+
+}
+.dialoguebox3{
+    display: none;
+
+}
+.dialoguebox4{
+    display: none;
+
+}
+
+ #greetings {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     width: 5em;
+     border: dotted 2px papayawhip;
+ }
