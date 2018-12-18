@@ -49,6 +49,10 @@ app.get('/logout',(req,res)=>{
 
 });
 
+app.get('/game', getgame);
+function getgame(req, res){
+  res.render('../views/pages/game');
+}
 
 
 // // The text to translate
