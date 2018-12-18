@@ -42,14 +42,25 @@ app.get('/logout',(req,res)=>{
 
 
 
-
+///////// get phrase function
 app.get('/phrases',getPhrase);
 function getPhrase(req,res){
-
-
-
+  let SQL = 'SELECT * from phrases;';
+  return client.query(SQL)
+    .then(results => res.render('index', {results: results.rows}))
+    .catch(err => console.error(err));
 
 }
+
+
+app.get('/dialogue',getdialogue);
+function getdialogue(req,res){
+  let SQL ='SELECT * from dialogue;';
+  return client.query(SQL)
+    .then(results => res.render('index', {results: results.rows}))
+    .catch(err => console.error(err));
+}
+
 
 
 
