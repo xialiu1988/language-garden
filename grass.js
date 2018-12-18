@@ -1,6 +1,4 @@
-/**
- * Original version http://labs.hyperandroid.com/js1k
- */
+
 (function() {
   Grass = function() {
     return this;
