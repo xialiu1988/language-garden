@@ -4,15 +4,15 @@
    <%- include('.././layout/head') %>
 
 <body>
-      <h6>Hello <br>Welcome ON Board!<br><a class="logout" href="/logout">LOGOUT</a></h6>
+      <h6>Hello,<%=data %><br>Welcome ON Board!<br><a class="logout" href="/logout">LOGOUT</a></h6>
       <%- include('.././layout/header') %>
        
      <ul>
       <% textarr.forEach((text,uid)=>{ %>
          <li>
            
-            <form>
-               <textarea id="text-<%=uid%>" type="text"  name="ps"><%= text %></textarea>       
+            <form >
+               <textarea  class="save-save-<%=uid%>" id="text-<%=uid%>" type="text"  name="ps"><%= text %></textarea>       
                <select name="phraselist" id="phrases-<%=uid%>">
                   <% langs.forEach(lang=>{ %>
                      <option  value="<%= lang[0] %>">
@@ -24,11 +24,15 @@
                </select>
              
                <button  class="formbutton" type='button' data-id="<%=uid%>">submit</button>
-           
+
               </form> 
-              
+
+              <form>
+               <button class="savebutton" type="submit" data-id="save-<%=uid%>">SAVE</button>
+              </form>
+
               <textarea id="textq-<%=uid%>" type="text"  name="pss"></textarea>    
-          
+
          </li>
         
 

@@ -20,12 +20,56 @@
             <input type="password" name="pw" value="">
         </td>
          </tr>
+
+         <tr>
+                
+                <td>Gender：</td>
+                <td>
+                    <input type="radio" name="sex"  id="man1" value="1" />
+                    <label for="man1">Male</label>
+                    <input type="radio" name="sex" id="man2" value="0" />
+                    <label for="man2">Female</label>                       
+                </td>                
+            </tr>
+
+            <tr>
+                    <td>Hobby：</td>
+                    <td>
+                    
+                        <input id="a1" type="checkbox" name="love" value="a" />
+                        <label for="a1">Hiking</label>
+                        
+                        <input id="b1" type="checkbox" name="love2" value="b" />
+                        <label for="b1">Drinking</label>
+                        
+                        <input id="c1" type="checkbox"  name="love3" checked="checked" value="c"/>
+                        <label for="c1">Talking</label>
+
+                    </td>
+
+                    <tr>
+                
+                            <td>Race：</td>
+                            <td>
+                                <select name="nation">
+                                        <% race.forEach((r,uid)=>{ %>
+                                            <option  value="<%= uid %>">
+                                               <%= r %>
+                                            </option>
+                                
+                                            <% }) %>     
+                                   
+                                 </select>
+        
+                            </td>
+        
+                        </tr>
+
         <tr>
         <td>
            <button type="submit">Confirm</button>
         </td>
-        </tr>
-         
+        </tr> 
      </table>
     
 </form>

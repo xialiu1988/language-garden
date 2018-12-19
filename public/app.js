@@ -29,3 +29,25 @@ function speak(textToSpeak,uu) {
   u.text = textToSpeak;
   synth.speak(u);
 }
+
+
+
+
+//save button
+$('.savebutton').click(function(){
+
+  var $toggle=$(this);
+  var textclass='.save-'+$toggle.data('id');
+  var data=textclass.val();
+
+  $.ajax({
+    type: 'POST',
+    data: JSON.stringify(data),
+    contentType: 'application/json',
+    url: 'http://localhost:3000/savephrases',
+    success: function(data) {
+      console.log('success');
+      console.log(JSON.stringify(data));
+    }
+  });
+});

@@ -6,5 +6,22 @@
 <body>
     <h6>Hello, <%=data%>!<br>Welcome ON Board!<br><a class="logout" href="/logout">LOGOUT</a></h6>
     <%- include('.././layout/header') %>
+       
+      <p><h2>Your Favorite Phrases are Here</h2></p>
+ 
+    <ul>
+       <% phrasegoup.forEach(phr=>{ %>
+     <li>
+      <p class="ph"> <%=phr %></p>
+    </li>
+
+     <% }) %> 
+    </ul>
+    
+
+
+ 
+   
+
 </body>
 </html>
