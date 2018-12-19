@@ -1,6 +1,6 @@
 'use strict';
 
-const greetingsArray = ['hola', 'bonjour', 'ola', 'namaste', 'salaam', 'ohayo', 'marhaba', 'jambo' ];
+const greetingsArray = ['hola','jambo' ];
 //generate random greeting
 let randomized = Math.floor(Math.random() * greetingsArray.length);
 let selectedWord = greetingsArray[randomized];
@@ -32,15 +32,15 @@ document.addEventListener('keypress', (event) => {
     //change the underscore to the correct letter
     underscore[selectedWord.indexOf(keyletter)] = keyletter;
     underscoreFill[0].innerHTML = underscore.join(' ');
-    correctletters[0].innerHTML = correctletters;
+    correctletters[0].innerHTML = correct;
     //verify the users input matches guesses
     if(underscore.join('') === selectedWord) {
-      alert('You are the winner!');
+      alert('Congratulations! You\'ve solved the puzzle');
     }
   } else {
     //populate incorrect letters
     incorrect.push(keyletter);
-    incorrectletters[0].innerHTML = incorrect
+    incorrectletters[0].innerHTML = incorrect;
   }
 });
 

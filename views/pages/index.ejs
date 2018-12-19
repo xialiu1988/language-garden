@@ -9,26 +9,26 @@
     <canvas id='s'>grass background</canvas>
     <h1>Secret Language Garden</h1>
     </header>
-      <h2>WELCOME!</h2>
+      <!-- <h2>WELCOME!</h2> -->
       
       <fieldset>
+      
+        <form id="loginform" action="/login" method="post">
 
-        <form action="/login" method="post">
-
-         <label class="username">USERNAME
+         <label class="username">Username
          <input  type='text' name='username' value="">
         </label>
 
-        <label class="password">PASSWORD
+        <label class="password">Password
         <input type="password" name="password" value="">
         </label>
         <button class="submitbtn">Log In</button>
         </form>
 
-        <form action="/signup" method="GET">
-          <button type="submit">Sign Up</button>
-        </form>
-  
+        <form id="signinform" action="/signup" method="GET">
+          <button class="submitbtn" type="submit">Sign Up</button>
+        </form> 
+      
       </fieldset>
 
   </body>
