@@ -96,9 +96,10 @@ function getgame(req, res){
   res.render('../views/pages/game');
 }
 
+// var textgroup=['Thanks so much!','how are you','Good Morning!','Good afternoon!','where are you from','what is going on?','can you help me?','where is restroom?','do you know...?','That\'s awesome!','sorry i cannot..','what is your name?','what language you speak?','do you want a drink?'];
+var textgroup=['Hello','Good morning','Good afternoon','Good evening','Please','Thank you so much!','How are you?','What is your name?','Nice to meet you','Where are you from?','Do you know...?','That\'s awesome!','I\'m sorry','Excuse me...','I don\'t understand','Goodbye'];
+var languages=[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic'],['zh-CN','Chinese Simplified'],['nl','Dutch'],['de','German'],['it','Italian'],['hi','Hindi'],['pt','Portugese'],['ru','Russian'],['es','Spanish'],['ja','Japanese'],['ms','Malay'],['ko','Korean'],['fr','French'],['el','Greek'],['tr','Turkish'],['sw','Swahili'],['sv','Swedish']];
 
-var textgroup=['Thanks so much!','how are you','Good Morning!','Good afternoon!','what is your hobby?','what is going on?','can you do me a favor?','where is restroom?','do you know...?','Really awesome!','sorry i cannot..','what is your name?','what language you speak?','do you want a drink?'];
-var languages=[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic'],['zh-CN','Chinese Simplified'],['nl','Dutch'],['fr','French'],['de','German'],['el','Greek'],['hi','Hindi'],['it','Italian'],['ja','Japanese'],['ko','Korean'],['ms','Malay'],['pt','Portugese'],['ru','Russian'],['es','Spanish'],['tr','Turkish'],['sw','Swahili'],['sv','Swedish']];
 app.get('/phrases',getphrases);
 function getphrases(req,res){
 
