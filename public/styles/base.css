@@ -64,16 +64,26 @@ ul {
   display: grid;
 }
 
-.links {
+a {
   color: white;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 4vw;
   padding: 1vw;
   font-size: 1.5vw;
+  
 }
 
 .submitbtn {
   margin: 1vw auto 0 auto;
   width: 5vw;
   display: grid;
+}
+
+a:hover {
+  border-radius: 20%;
+  background-color: blue;
+  border: none;
+  text-align: center;
+  font-size: 1.5vw;
+  transition: all 0.5s;
 }

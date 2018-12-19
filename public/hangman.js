@@ -1,6 +1,6 @@
 'use strict';
 
-const greetingsArray = ['hola','jambo' ];
+const greetingsArray = ['hola','jambo','salaam','bonjour','ohayo','ola','konichiwa'];
 //generate random greeting
 let randomized = Math.floor(Math.random() * greetingsArray.length);
 let selectedWord = greetingsArray[randomized];
