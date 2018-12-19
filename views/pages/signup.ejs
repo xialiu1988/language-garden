@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('.././layout/head') %>
+</head>
+<body>
+     <h1>Hi! Welcome!</h1>
+     <form  action='/signup' method="POST">
+     <table>
+         <tr>
+         <td>UserName: </td>
+         <td>
+            <input type="text" name="user" value="">
+         </td>
+        </tr>
+
+        <tr>
+         <td>PassWord: </td>
+         <td>
+            <input type="password" name="pw" value="">
+        </td>
+         </tr>
+        <tr>
+        <td>
+           <button type="submit">Confirm</button>
+        </td>
+        </tr>
+         
+     </table>
+    
+</form>
+</body>
+</html>
