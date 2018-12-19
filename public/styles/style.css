@@ -1,5 +1,5 @@
 body { 
-    background-color: #000000; 
+    background-color: black; 
     margin: 0px; 
     overflow: hidden;
     /* display: block;
@@ -7,3 +7,14 @@ body {
     height: 100vh;
     position: fixed; */
  }
+
+textarea {
+    text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+ }
+
+.text {
+    float: left;
+}

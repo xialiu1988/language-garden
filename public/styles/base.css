@@ -9,11 +9,14 @@
     position: relative;
   }
 
-
+  header {
+    margin-bottom: 10vh;
+  }
   body {
     background-color: #999;
     color: white;
     text-align: center;
+    overflow: auto;
     /* font-family: "Nunito", sans-serif; */
   }
 
@@ -29,7 +32,7 @@
   h2{
     /* font-family: 'ZCOOL KuaiLe', cursive; */
     font-size: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 3vh;
 }
 .username,.password{
     /* font-family: 'Skranji', cursive; */
@@ -43,4 +46,8 @@ h6{
 
 .dialougebox {
   border-style: double;
+}
+
+ul {
+  text-align: center;
 }
