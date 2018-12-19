@@ -22,7 +22,6 @@ $(document).ready(function(){
 
 
 var u = new SpeechSynthesisUtterance();
-
 function speak(textToSpeak,uu) {
   var synth = window.speechSynthesis;
   u.lang = uu;
