@@ -1,46 +1,32 @@
 'use strict';
 
 
-// window.onload =function() {
-//      document.getElementById('#link').onclick= function() {
-//         if(functionToCall()){
-//           return false;
-//         }
-//     };
 
 
 $(document).ready(function() {
-  $('.dbtn').click(function() {
-
-    $('.dialoguebox').toggle();
-
-
-  });
-});
-
-$(document).ready(function() {
-  $('.dbtn').click(function() {
-
-    $('.dialoguebox2').toggle();
-
+  $('#add-0').on('click', function() {
+     $('.dialoguebox').hide();
+     $('#greeting').show();
+    
+    //   var $toggle=$(this);
+    // var id = 'toggle' + $toggle.data(id);
+    // $('id').toggle();
 
   });
-});
-
-$(document).ready(function() {
-  $('.dbtn').click(function() {
-
-    $('.dialoguebox3').toggle();
-
-
+  $('#add-1').on('click', function() {
+    $('.dialoguebox').hide();
+    $('#sports').show();
   });
-});
-
-$(document).ready(function() {
-  $('.dbtn').click(function() {
-
-    $('.dialoguebox4').toggle();
-
-
+  $('#add-2').on('click', function() {
+    $('.dialoguebox').hide();
+    $('#food').show();
   });
+  $('#add-3').on('click', function() {
+    $('.dialoguebox').hide();
+    $('#weather').show();
+  });
+
 });
+
+
+

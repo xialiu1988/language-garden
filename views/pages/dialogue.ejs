@@ -7,11 +7,13 @@
     <h6>Hello, <br>Welcome ON Board!<br><a class="logout" href="/logout">LOGOUT</a></h6>
         <%- include('.././layout/header') %>
         <ul>
-            <% textarr.forEach((text,uid)=>{ %>
+             <% textarr.forEach((text,uid)=>{ %>
                <li>
                   <p><%= text %></p>
-                  <button class='dbtn' type='submit' id="add-<%= uid %>">Add</button>
-               </li>
+                  <button class='dbtn' type='submit' id="add-<%= uid %>">Add</button> 
+                  
+                 
+                </li>
       
                <% }) %>     
            
@@ -29,26 +31,25 @@
 
            
    </li>
-  
-
      
 </ul>
 
-<p class="dialoguebox" id='toogle'>
+
+<p class="dialoguebox" id='greeting'>
         Ahmad: Good morning, Xia.  How are you?
         Xia:  I am well, and you?
         Ahmad:  I'm great, thank you.  This is my friend Shalom.
         Xia:  Hey Shalom, it's a pleasure to meet you.
         Shalom:  Nice to meet you too, Xia!  
     </p>
-    <p class="dialoguebox2" id='sports'>
+    <p class="dialoguebox" id='sports'>
             Andrew: Did you go to the football game on Saturday?
             Ryna: No, I had to work.
             Andrew: Aw, it was a really good game!
             Ryna:  Really, who won?
             Andrew:  The Huskies won. They beat the Cougars 47-16.
             </p>
-    <p class="dialoguebox3" id='weather'>
+    <p class="dialoguebox" id='weather'>
 
             Deziree: This rain is awful, isn't it?
     Brian: The forecast said it would clear up after lunch.
@@ -57,7 +58,7 @@
     Deziree: I'm from Russia, it's freezing cold there!
         </p>
 
-    <p class="dialoguebox4" id='food'>
+    <p class="dialoguebox" id='food'>
             Server: Can I get you anything to drink?
             Customer: Yes, may I have a glass of water please?
             Server: Would you like to start with an appetizer?
@@ -65,6 +66,7 @@
             Server:  The mozzarella sticks are very popular.
             Customer: Okay, I'll take some!
         </p>
+
 
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

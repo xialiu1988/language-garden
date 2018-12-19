@@ -7,14 +7,16 @@ body {
     height: 100vh;
     position: fixed; */
  }
-
+.active{
+    display: block;
+}
  .dialoguebox {
      display: none;
-
+  
  }
  .dialoguebox1{
     display: none;
-
+ 
 }
 .dialoguebox2{
     display: none;

@@ -88,7 +88,7 @@ function getphrases(req,res){
 
 
 
-var dialoguegroup =['Greetings','Sports','Direction','Food','Weather']
+var dialoguegroup =['Greetings','Sports','Food','Weather']
 var change =[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic']];
 app.get('/dialogue',getdialogue);
 function getdialogue(req,res){
