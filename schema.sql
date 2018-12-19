@@ -17,6 +17,10 @@ FOREIGN KEY (users_id) REFERENCES users(id)
 DELETE FROM users;
 INSERT INTO users (username,pw) VALUES ('xia','123');
 INSERT INTO users (username,pw) VALUES ('Dez','123');
+INSERT INTO users (username,pw) VALUES ('Ahmad','123');
+INSERT INTO users (username,pw) VALUES ('Shalom','123');
+
+
 
 
 
