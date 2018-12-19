@@ -18,3 +18,14 @@ textarea {
 .text {
     float: left;
 }
+
+#s {
+    left: 0px;
+    z-index: -1;
+    position: absolute;
+}
+
+#help {
+    z-index: 5;
+    position: absolute;
+}
