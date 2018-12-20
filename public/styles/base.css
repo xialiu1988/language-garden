@@ -1,40 +1,89 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito");
 @import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Skranji|ZCOOL+KuaiLe");
 @import url("https://fonts.googleapis.com/css?family=Oldenburg");
+@import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light")
 
 
-html {
+  html {
     min-height: 150vw;
     position: relative;
   }
 
-
+  header {
+    margin-bottom: 10vh;
+  }
   body {
     background-color: #999;
     color: white;
     text-align: center;
-    font-family: "Nunito", sans-serif;
+    overflow: auto;
+    /* font-family: "Nunito", sans-serif; */
   }
 
   header > h1 {
     position: center;
-    font-size: 5vw;
-    margin-left: 4vw;
-    line-height: 16vw;
-    font-family: "Oldenburg", cursive;
+    font-size: 6vw;
+    text-align: center;
+    /* margin-left: 4vw; */
+    line-height: 10vw;
+    font-family: 'Shadows Into Light', cursive;
+    /* font-family: "Oldenburg", cursive; */
   }
   
   h2{
-    font-family: 'ZCOOL KuaiLe', cursive;
-    font-size: 40px;
-    margin-bottom: 30px;
+    /* font-family: 'ZCOOL KuaiLe', cursive; */
+    font-size: 4vw;
+    margin-bottom: 3vh;
 }
 .username,.password{
-    font-family: 'Skranji', cursive;
+    /* font-family: 'Skranji', cursive; */
 }
 
 h6{
-    float: left;
-    font-size: 20px;
-    font-family: 'ZCOOL KuaiLe', cursive;
+    float: right;
+    font-size: 1.2vw;
+    /* font-family: 'ZCOOL KuaiLe', cursive; */
+}
+
+.dialougebox {
+  border-style: double;
+}
+
+ul {
+  text-align: center;
+}
+
+#loginform {
+  font-size: 2vw;
+  border: 1px solid red;
+  display: grid;
+}
+
+#signupform {
+  border: 1px solid red;
+  display: grid;
+}
+
+a {
+  color: white;
+  /* border: 1px solid red; */
+  margin: 4vw;
+  padding: 1vw;
+  font-size: 1.5vw;
+  
+}
+
+.submitbtn {
+  margin: 1vw auto 0 auto;
+  width: 5vw;
+  display: grid;
+}
+
+a:hover {
+  border-radius: 20%;
+  background-color: blue;
+  border: none;
+  text-align: center;
+  font-size: 1.5vw;
+  transition: all 0.5s;
 }

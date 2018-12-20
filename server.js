@@ -36,6 +36,25 @@ app.get('/',(req,res)=>{
 });
 
 
+app.post('/login',(req,res)=>{
+  var name=req.body.username;
+  var pwd=req.body.password;
+  console.log(name,pwd);
+  return client.query(`SELECT username,pw from users WHERE username='${name}';`,function(err,result){
+    console.log(result.rows);
+    result.rows.forEach(item=>{
+      if(name===item.username&& pwd===item.pw){
+        res.render('../views/pages/garden',{data:name});
+      }
+      else{
+        res.render('../views/pages/error');
+      }
+    });
+    res.render('../views/pages/error');
+  }
+  );
+});
+
 
 //if new user, create an count, pwd hast to be '123'
 var race=['white/Caucasian','African Americans','Mongoloid/Asian','Australoid','other'];
@@ -103,10 +122,15 @@ app.get('/logout',(req,res)=>{
   });
 });
 
+app.get('/game', getgame);
+function getgame(req, res){
+  res.render('../views/pages/game');
+}
 
+// var textgroup=['Thanks so much!','how are you','Good Morning!','Good afternoon!','where are you from','what is going on?','can you help me?','where is restroom?','do you know...?','That\'s awesome!','sorry i cannot..','what is your name?','what language you speak?','do you want a drink?'];
+var textgroup=['Hello','Good morning','Good afternoon','Good evening','Please','Thank you so much!','How are you?','What is your name?','Nice to meet you','Where are you from?','Do you know...?','That\'s awesome!','I\'m sorry','Excuse me...','I don\'t understand','Goodbye'];
+var languages=[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic'],['zh-CN','Chinese Simplified'],['nl','Dutch'],['de','German'],['it','Italian'],['hi','Hindi'],['pt','Portugese'],['ru','Russian'],['es','Spanish'],['ja','Japanese'],['ms','Malay'],['ko','Korean'],['fr','French'],['el','Greek'],['tr','Turkish'],['sw','Swahili'],['sv','Swedish']];
 
-var textgroup=['Thanks so much!','how are you','Good Morning!','Good afternoon!','what is your hobby?','what is going on?','can you do me a favor?','where is restroom?','do you know...?','Really awesome!','sorry i cannot..','what is your name?','what language you speak?','do you want a drink?'];
-var languages=[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic'],['zh-CN','Chinese Simplified'],['nl','Dutch'],['fr','French'],['de','German'],['el','Greek'],['hi','Hindi'],['it','Italian'],['ja','Japanese'],['ko','Korean'],['ms','Malay'],['pt','Portugese'],['ru','Russian'],['es','Spanish'],['tr','Turkish'],['sw','Swahili'],['sv','Swedish']];
 app.get('/phrases',getphrases);
 function getphrases(req,res){
   sess=req.session;
@@ -149,14 +173,24 @@ function savethephrase(req,res){
     }
   });
 
+var textdialoguegroup =['Greetings','Sports','Food','Weather']
+var change =[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic'],['zh-CN','Chinese Simplified'],['es','Spanish'],['it','Italian'],['hi','Hindi'],['bn','Bengali'],['pt','Portugese'],['ru','Russian'],['ja','Japanese'],['ms','Malay'],['ko','Korean'],['fa','Persian'],['fr','French'],['el','Greek'],['tr','Turkish'],['uk','Ukranian'],['ur','Urdu'],['sw','Swahili']];
+app.get('/dialogue',getdialogue);
+function getdialogue(req,res){
+  res.render('../views/pages/dialogue',{textarr:textdialoguegroup,langs:change});
 }
 
 
 
 
-app.get('*', (req, res) => {
-  res.redirect('/error');
-});
+
+
+
+
+
+// app.get('*', (req, res) => {
+//   res.redirect('/error');
+// });
 app.listen(PORT, () => {
   console.log(`listening port ${PORT}.`);
 });

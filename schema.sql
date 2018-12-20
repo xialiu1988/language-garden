@@ -1,3 +1,5 @@
+
+
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS phrases;
 
@@ -12,6 +14,13 @@ id SERIAL PRIMARY KEY,
 phrase VARCHAR(255),
 users_id INTEGER NOT NULL,
 FOREIGN KEY (users_id) REFERENCES users(id)
+);
+
+CREATE TABLE dialogues(
+    id SERIAL PRIMARY KEY,
+    dialogue VARCHAR(255),
+    users_id INTEGER NOT NULL,
+   FOREIGN KEY (users_id) REFERENCES users(id)
 );
 
 DELETE FROM users;

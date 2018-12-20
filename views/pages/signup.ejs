@@ -4,18 +4,20 @@
     <%- include('.././layout/head') %>
 </head>
 <body>
-     <h1>Hi! Welcome!</h1>
+     <!-- <h1>Hi! Welcome!</h1> -->
+     <canvas id='s'>grass background</canvas>
+     <p>Sign up to gain access to the Secret Language Garden</p>
      <form  action='/signup' method="POST">
      <table>
          <tr>
-         <td>UserName: </td>
+         <td>Username: </td>
          <td>
             <input type="text" name="user" value="">
          </td>
         </tr>
 
         <tr>
-         <td>PassWord: </td>
+         <td>Password: </td>
          <td>
             <input type="password" name="pw" value="">
         </td>
@@ -73,5 +75,6 @@
      </table>
     
 </form>
+<script src="/grass.js"></script>
 </body>
 </html>

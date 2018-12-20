@@ -6,8 +6,10 @@ $(document).ready(function(){
     var $toggle=$(this);
     var textid='#text-'+$toggle.data('id');
     var tarid='#phrases-'+$toggle.data('id');
+
     console.log($(tarid).val());
     var url = 'https://translation.googleapis.com/language/translate/v2?key=AIzaSyATyAPRLeJ6PjtZ0E7i1ZrB-ymt9t1kWpQ';
+
     url += '&source=' + 'en';
     url += '&target=' + $(tarid).val();
     url += '&q=' + escape($(textid).val());

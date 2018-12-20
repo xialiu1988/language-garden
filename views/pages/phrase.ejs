@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html>
-
-   <%- include('.././layout/head') %>
-
+   <head>
+     <%- include('.././layout/head') %>  
+   <link rel="stylesheet" href="/styles/phrases.css"> 
+   </head>
+   
 <body>
+
       <h6>Hello,<%=data %><br>Welcome ON Board!<br><a class="logout" href="/logout">LOGOUT</a></h6>
       <%- include('.././layout/header') %>
+
        
      <ul>
       <% textarr.forEach((text,uid)=>{ %>
          <li>
-           
-            <form >
-               <textarea  class="save-save-<%=uid%>" id="text-<%=uid%>" type="text"  name="ps"><%= text %></textarea>       
+
+            <div class="grid-container">
+               <div class="grid-item">
+               <form>
+               <textarea class="save-save-<%=uid%>" id="text-<%=uid%>" type="text"  name="ps"><%= text %></textarea>    
+               </div>
+
+               <div class="grid-item">
+
                <select name="phraselist" id="phrases-<%=uid%>">
                   <% langs.forEach(lang=>{ %>
                      <option  value="<%= lang[0] %>">
@@ -20,10 +30,11 @@
                      </option>
          
                      <% }) %>     
-                    
+                      
                </select>
-             
+               
                <button  class="formbutton" type='button' data-id="<%=uid%>">submit</button>
+
 
               </form> 
 
@@ -32,6 +43,12 @@
               </form>
 
               <textarea id="textq-<%=uid%>" type="text"  name="pss"></textarea>    
+
+
+           
+              </div> 
+
+             
 
          </li>
         
