@@ -35,7 +35,7 @@ app.get('/',(req,res)=>{
 app.post('/login',(req,res)=>{
   var name=req.body.username;
   var pwd=req.body.password;
-  console.log(pwd);
+  console.log(name,pwd);
   return client.query(`SELECT username,pw from users WHERE username='${name}';`,function(err,result){
     console.log(result.rows);
     result.rows.forEach(item=>{
@@ -125,9 +125,9 @@ function getdialogue(req,res){
 
 
 
-app.get('*', (req, res) => {
-  res.redirect('/error');
-});
+// app.get('*', (req, res) => {
+//   res.redirect('/error');
+// });
 app.listen(PORT, () => {
   console.log(`listening port ${PORT}.`);
 });
