@@ -4,15 +4,71 @@
    <%- include('.././layout/head') %>
 
 <body>
-        <h6>Hello, <%=data%>!<br>Welcome ON Board!<br><a class="logout" href="/logout">LOGOUT</a></h6>
+    <h6>Hello, <br>Welcome ON Board!<br><a class="logout" href="/logout">LOGOUT</a></h6>
         <%- include('.././layout/header') %>
+        <ul>
+             <% textarr.forEach((text,uid)=>{ %>
+               <li>
+                  <p><%= text %></p>
+                  <form>
+                  <textarea id="text-<%=uid%>" type="text"  name="ps"><%= text %></textarea> 
+                  <button class='dbtn' id="add-<%= uid %>">Add</button>
+                  <button class='form' type="button" id="<%=uid%>" data-id="<%= uid %>">Translate</button> 
+                
+          
+            <select name='dialoguelist' id='dialogue-<%=uid%>'>
+               <% langs.forEach(lang=>{ %>
+                  <option value="<%= lang[0] %>">
+                     <%= lang[1] %>
+                  </option>
 
-    <main>
-        <a class="dialogues" href="../pages/dialogues/greetings.ejs">Greetings</a>
-        <a class="dialogues" href="../pages/dialogues/weather.ejs">Weather</a>
-        <a class="dialogues" href="../pages/dialogues/food.ejs">Food</a>
-        <a class="dialogues" href="../pages/dialogues/sports.ejs">Sports</a>
-    </main>
+                  <% }) %>     
+            </select>  
+            <textarea id="textq-<%=uid%>" type="text"  name="pss"></textarea>  
+</form>
+</li>
+<% }) %>     
+     
+</ul>
+
+
+
+<p class="dialoguebox" id='greeting'>
+        Ahmad: Good morning, Xia.  How are you?
+        Xia:  I am well, and you?
+        Ahmad:  I'm great, thank you.  This is my friend Shalom.
+        Xia:  Hey Shalom, it's a pleasure to meet you.
+        Shalom:  Nice to meet you too, Xia!  
+    </p>
+    <p class="dialoguebox" id='sports'>
+            Andrew: Did you go to the football game on Saturday?
+            Ryna: No, I had to work.
+            Andrew: Aw, it was a really good game!
+            Ryna:  Really, who won?
+            Andrew:  The Huskies won. They beat the Cougars 47-16.
+            </p>
+    <p class="dialoguebox" id='weather'>
+
+            Deziree: This rain is awful, isn't it?
+    Brian: The forecast said it would clear up after lunch.
+    Deziree: I hope so, but at least it's warmer than where I'm from.
+    Brian:  Really, where are you from?
+    Deziree: I'm from Russia, it's freezing cold there!
+        </p>
+
+    <p class="dialoguebox" id='food'>
+            Server: Can I get you anything to drink?
+            Customer: Yes, may I have a glass of water please?
+            Server: Would you like to start with an appetizer?
+            Customer: Yes, what do you recommend?
+            Server:  The mozzarella sticks are very popular.
+            Customer: Okay, I'll take some!
+        </p>
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/dialogue.js"></script>
 
 </body>
 </html>

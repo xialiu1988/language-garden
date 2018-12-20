@@ -8,6 +8,39 @@ body {
     position: fixed; */
  }
 
+.active{
+    display: block;
+}
+ .dialoguebox {
+     display: none;
+  
+ }
+ .dialoguebox1{
+    display: none;
+ 
+}
+.dialoguebox2{
+    display: none;
+
+}
+.dialoguebox3{
+    display: none;
+
+}
+.dialoguebox4{
+    display: none;
+
+}
+
+ #greetings {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     width: 5em;
+     border: dotted 2px papayawhip;
+ }
+
+
 textarea {
     text-align: center;
     -webkit-border-radius: 5px;
@@ -29,3 +62,4 @@ textarea {
     z-index: 5;
     position: absolute;
 }
+
