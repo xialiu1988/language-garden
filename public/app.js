@@ -8,7 +8,7 @@ $(document).ready(function(){
     var tarid='#phrases-'+$toggle.data('id');
 
     console.log($(tarid).val());
-    var url = 'https://translation.googleapis.com/language/translate/v2?key=AIzaSyATyAPRLeJ6PjtZ0E7i1ZrB-ymt9t1kWpQ';
+    var url = 'https://translation.googleapis.com/language/translate/v2?key=AIzaSyCu_L955TWKLiDJdqI61-3xf5M_Ankyh44';
 
     url += '&source=' + 'en';
     url += '&target=' + $(tarid).val();
@@ -49,6 +49,25 @@ console.log(data);
     
     contentType:'application/json',
     url: '/savephrases',
+    success: function(data) {
+      console.log('success');
+      console.log(JSON.stringify(data));
+    }
+  });
+});
+
+$('.deletebutton').click(function(){
+
+  var $toggle=$(this);
+  var textclass='#delete-'+$toggle.data('id');
+  var data=$(textclass).text();
+console.log(data);
+  $.ajax({
+    type: 'GET',
+    data: {phrase:data},
+    
+    contentType:'application/json',
+    url: '/deletephrases',
     success: function(data) {
       console.log('success');
       console.log(JSON.stringify(data));

@@ -1,10 +1,7 @@
 'use strict';
 
-
-
-
-$(document).ready(function() {
-  $('#add-0').on('click', function(e) {
+$(document).ready(function () {
+  $('#add-0').on('click', function (e) {
     console.log('hey');
     $('.dialoguebox').hide();
     $('#textq-0').val($('#greeting').text());
@@ -12,6 +9,7 @@ $(document).ready(function() {
     e.preventDefault();
 
   });
+
   // $('#add-1').on('click', function(e) {
   //   $('.dialoguebox').hide();
   //   // $('#sports').show();
@@ -30,7 +28,7 @@ $(document).ready(function() {
     $('#textq-2').val($('#weather').text());
     e.preventDefault();
   });
-
+});
 
   $('.form').on('click', function(){
     console.log('I\'m alive');
@@ -53,6 +51,9 @@ $(document).ready(function() {
       $('#text-'+$toggle.data('id')).val(data.data.translations[0].translatedText);
     });
 
+
   });
 
 });
+
+

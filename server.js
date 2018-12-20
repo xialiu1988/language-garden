@@ -82,9 +82,11 @@ app.post('/login',(req,res)=>{
     result.rows.forEach(item=>{
       if(name===item.username&& pwd===item.pw&&item.phrase){
         phrasegoup.push(item.phrase);
+        
       } }
     );
     sess.phrasegoup=phrasegoup;
+    console.log(phrasegoup);
     res.render('../views/pages/garden',{data:name,phrasegoup:phrasegoup});
   });
 
@@ -110,6 +112,12 @@ function getgame(req, res){
 }
 
 var textgroup=['Hello, how are you?', 'What\'s your name?', 'Where are you from?'];
+
+app.get('/AboutUs', getAboutUs);
+function getAboutUs(req, res){
+  res.render('../views/pages/AboutUs');
+}
+
 var languages=[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic'],['zh-CN','Chinese Simplified'],['nl','Dutch'],['de','German'],['it','Italian'],['hi','Hindi'],['pt','Portugese'],['ru','Russian'],['es','Spanish'],['ja','Japanese'],['ms','Malay'],['ko','Korean'],['fr','French'],['el','Greek'],['tr','Turkish'],['sw','Swahili'],['sv','Swedish']];
 
 app.get('/phrases',getphrases);
@@ -129,7 +137,7 @@ function getphrases(req,res){
 app.get('/savephrases',savethephrase);
 function savethephrase(req,res){
   sess=req.session;
-  console.log( req.query);
+
   sess.phrasegoup.push(req.query.phrase);
   client.query(`SELECT id from users WHERE username='${sess.name}';`,(err,result)=>{
     if (err) {
@@ -157,9 +165,9 @@ function savethephrase(req,res){
 
 app.get('/staylogin',stay);
 function stay(req,res){
-  
+
   sess=req.session;
- 
+
   res.render('../views/pages/garden',{data:sess.name,phrasegoup:sess.phrasegoup});
 
 }
@@ -173,9 +181,28 @@ function getdialogue(req,res){
 }
 
 
+app.get('/deletephrases',deleteit);
+function deleteit(req,res){
+  sess=req.session;
+  console.log(sess);
+  client.query(`SELECT id from users WHERE username='${sess.name}';`,function(err,result){
+    console.log( result.rows[0].id);
+    console.log(req.query.phrase);
+    console.log(`DELETE FROM phrases WHERE phrase='${req.query.phrase.trim()}' AND users_id=${result.rows[0].id};`);
+    return client.query(`DELETE FROM phrases WHERE phrase='${req.query.phrase.trim()}' AND users_id=${result.rows[0].id};`)
 
-
-
+      .then( result => {
+        console.log(result);
+        console.log(sess.phrasegoup);
+        var index=sess.phrasegoup.indexOf(req.query.phrase);
+        sess.phrasegoup.splice(index,1);
+        console.log(sess.phrasegoup);
+        res.render('../views/pages/garden',{data:sess.name,phrasegoup:sess.phrasegoup});
+      })
+      .catch(err=>console.error(err));
+  });
+ 
+}
 
 
 
