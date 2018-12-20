@@ -2,42 +2,53 @@
 <html>
 
    <%- include('.././layout/head') %>
-
+   <link rel="stylesheet" href="/styles/phrases.css"> 
 <body>
     <h6>Hello, <%=data%>!<br>Welcome ON Board!<br><a class="logout" href="/logout">LOGOUT</a></h6>
         <%- include('.././layout/header') %>
+        
         <ul>
              <% textarr.forEach((text,uid)=>{ %>
-               <li>
-                  <p><%= text %></p>
+               
+                <li>
+                <div class="grid-container">
+                <div class="grid-item">      
+                  <!-- <p><%= text %></p> -->
                   <form>
-                  <textarea id="text-<%=uid%>" type="text"  name="ps"><%= text %></textarea> 
-                  <button class='dbtn' id="add-<%= uid %>">Add</button>
-                  <button class='form' type="button" id="<%=uid%>" data-id="<%= uid %>">Translate</button> 
+                  <textarea id="text-<%=uid%>" type="text"  name="ps" rows="4" cols="20"><%= text %></textarea> 
+                  </div>
+                  
+                  <div class="grid-item">
+                <button class='dbtn' id="add-<%= uid %>">Select Dialogue</button>
+                  
+                <select name='dialoguelist' id='dialogue-<%=uid%>'>
+                                <% langs.forEach(lang=>{ %>
+                                   <option value="<%= lang[0] %>">
+                                      <%= lang[1] %>
+                                   </option>
+                 
+                                   <% }) %>     
+                             </select>  
                 
-          
-            <select name='dialoguelist' id='dialogue-<%=uid%>'>
-               <% langs.forEach(lang=>{ %>
-                  <option value="<%= lang[0] %>">
-                     <%= lang[1] %>
-                  </option>
-
-                  <% }) %>     
-            </select>  
-            <textarea id="textq-<%=uid%>" type="text"  name="pss"></textarea>  
+                <button class='form' type="button" id="<%=uid%>" data-id="<%= uid %>">Translate</button>             
+            </div>
+            <div class="grid-item">  
+            <textarea id="textq-<%=uid%>" type="text"  name="pss" rows="4" cols="20"></textarea>  
+            </div>
 </form>
 </li>
 <% }) %>     
      
 </ul>
+</div>
 
 
 
 <p class="dialoguebox" id='greeting'>
-        Ahmad: Good morning, Xia.  How are you?
-        Xia:  I am well, and you?
-        Ahmad:  I'm great, thank you.  This is my friend Shalom.
-        Xia:  Hey Shalom, it's a pleasure to meet you.
+        Ahmad: Good morning, Xia.  How are you?<br>
+        Xia:  I am well, and you?<br>
+        Ahmad:  I'm great, thank you.  This is my friend Shalom.<br>
+        Xia:  Hey Shalom, it's a pleasure to meet you.<br>
         Shalom:  Nice to meet you too, Xia!  
     </p>
     <p class="dialoguebox" id='sports'>
@@ -69,6 +80,8 @@
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="/dialogue.js"></script>
+<canvas id='s'>grass background</canvas>
+<script src="/grass.js"></script>
 
 </body>
 </html>

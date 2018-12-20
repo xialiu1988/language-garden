@@ -30,8 +30,8 @@ INSERT INTO users (username,pw) VALUES ('Ahmad','123');
 INSERT INTO users (username,pw) VALUES ('Shalom','123');
 
 
-INSERT INTO phrases (phrase,users_id) VALUES ('where is restroom?',(SELECT id from users WHERE username='xia'));
-INSERT INTO phrases (phrase,users_id) VALUES ('can you do me a favor',(SELECT id from users WHERE username='xia'));
+INSERT INTO phrases (phrase,users_id) VALUES ('Where is the restroom?',(SELECT id from users WHERE username='xia'));
+INSERT INTO phrases (phrase,users_id) VALUES ('Can you do me a favor?',(SELECT id from users WHERE username='xia'));
 
 
 

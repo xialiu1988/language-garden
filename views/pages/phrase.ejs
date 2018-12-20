@@ -22,24 +22,20 @@
                </div>
 
                <div class="grid-item">
-
                <select name="phraselist" id="phrases-<%=uid%>">
                   <% langs.forEach(lang=>{ %>
                      <option  value="<%= lang[0] %>">
                         <%= lang[1] %>
                      </option>
          
-                     <% }) %>     
-                      
+                     <% }) %>         
                </select>
                
-               <button  class="formbutton" type='button' data-id="<%=uid%>">submit</button>
-
-
+               <button  class="formbutton" type='button' data-id="<%=uid%>">Translate</button>
               </form> 
 
               <form>
-               <button class="savebutton" type="submit" data-id="save-<%=uid%>">SAVE</button>
+               <button class="savebutton" type="submit" data-id="save-<%=uid%>">Save</button>
               </form>
               </div>
 
