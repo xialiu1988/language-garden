@@ -4,10 +4,29 @@
    <%- include('.././layout/head') %>
 
 <body>
-    <h6>Hello, <%=data%>!
-    <br>Welcome on Board!<br>
-    <a class="logout" href="/logout">logout</a></h6>
+
+    <h6>Hello, <%=data%>!<br>Welcome ON Board!<br><a class="logout" href="/logout">LOGOUT</a></h6>
+    <%- include('.././layout/header') %>
+       
+      <p><h2>Your Favorite Phrases are Here</h2></p>
+ 
+    <ul>
+       <% phrasegoup.forEach(phr=>{ %>
+     <li>
+      <p class="ph"> <%=phr %></p>
+    </li>
+
+     <% }) %> 
+    </ul>
+    
+
+
+ 
+   
+
+
     <canvas id='s'>grass background</canvas>
+
 </body>
     <%- include('.././layout/header') %>
     <script src="/grass.js"></script>

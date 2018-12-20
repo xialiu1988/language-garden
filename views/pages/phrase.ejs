@@ -7,22 +7,22 @@
    
 <body>
 
-      <h6>Hello, <br>Welcome on Board!<br><a class="logout" href="/logout">logout</a></h6>
-      <header>
-       <%- include('.././layout/header') %>  
-      </header>
-      
+      <h6>Hello,<%=data %><br>Welcome ON Board!<br><a class="logout" href="/logout">LOGOUT</a></h6>
+      <%- include('.././layout/header') %>
+
        
      <ul>
       <% textarr.forEach((text,uid)=>{ %>
          <li>
+
             <div class="grid-container">
                <div class="grid-item">
                <form>
-               <textarea id="text-<%=uid%>" type="text"  name="ps"><%= text %></textarea>    
+               <textarea class="save-save-<%=uid%>" id="text-<%=uid%>" type="text"  name="ps"><%= text %></textarea>    
                </div>
 
                <div class="grid-item">
+
                <select name="phraselist" id="phrases-<%=uid%>">
                   <% langs.forEach(lang=>{ %>
                      <option  value="<%= lang[0] %>">
@@ -34,12 +34,22 @@
                </select>
                
                <button  class="formbutton" type='button' data-id="<%=uid%>">submit</button>
+
+
+              </form> 
+
+              <form>
+               <button class="savebutton" type="submit" data-id="save-<%=uid%>">SAVE</button>
               </form>
+
+              <textarea id="textq-<%=uid%>" type="text"  name="pss"></textarea>    
+
+
+           
               </div> 
 
-              <div class="grid-item">
-              <textarea id="textq-<%=uid%>" type="text"  name="pss"></textarea>    
-            </div>
+             
+
          </li>
         
 
