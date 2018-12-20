@@ -2,14 +2,15 @@
 <html>
 
    <%- include('.././layout/head') %>
-
+<hr class="linerule">
 <body>
   
-    <h6>Hello, <%=data%>!<br>Welcome ON Board!<br><a class="logout" href="/logout">LOGOUT</a></h6>
+    <h6>Hello, <%=data%>!<br>Welcome on Board!<br><a class="logout" href="/logout">Logout</a></h6>
     <%- include('.././layout/header') %>
-
  
-      <p><h2>Your Favorite Phrases are Here</h2></p>
+    <div id='phrasebox'>
+      <p><h2><strong>Saved Phrases</strong></h2></p>
+      <br>
  
     <ul>
        <% phrasegoup.forEach((phr,uid)=>{ %>
@@ -23,7 +24,7 @@
 
      <% }) %> 
     </ul>
-    
+  </div>
     <canvas id='s'>grass background</canvas>
     <script src="/grass.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

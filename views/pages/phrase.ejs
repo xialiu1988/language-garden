@@ -15,35 +15,33 @@
       <% textarr.forEach((text,uid)=>{ %>
          <li>
 
-            <!-- <div class="grid-container"> -->
+            <div class="grid-container">
                <div class="grid-item">
                <form>
                <textarea class="save-save-<%=uid%>" id="text-<%=uid%>" type="text"  name="ps"><%= text %></textarea>    
                </div>
 
                <div class="grid-item">
-
                <select name="phraselist" id="phrases-<%=uid%>">
                   <% langs.forEach(lang=>{ %>
                      <option  value="<%= lang[0] %>">
                         <%= lang[1] %>
                      </option>
          
-                     <% }) %>     
-                      
+                     <% }) %>         
                </select>
                
-               <button  class="formbutton" type='button' data-id="<%=uid%>">submit</button>
-
-
+               <button  class="formbutton" type='button' data-id="<%=uid%>">Translate</button>
               </form> 
 
               <form>
-               <button class="savebutton" type="submit" data-id="save-<%=uid%>">SAVE</button>
+               <button class="savebutton" type="submit" data-id="save-<%=uid%>">Save</button>
               </form>
+              </div>
 
+              <div class="grid-item">
               <textarea id="textq-<%=uid%>" type="text"  name="pss"></textarea>    
-
+              </div>
 
            
               </div> 
@@ -74,5 +72,7 @@
   -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script type="text/javascript" src="/app.js"></script>
+  <canvas id='s'>grass background</canvas>
+   <script src="/grass.js"></script>
 </body>
 </html>

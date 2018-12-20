@@ -111,12 +111,13 @@ function getgame(req, res){
   res.render('../views/pages/game');
 }
 
+var textgroup=['Hello, how are you?', 'What\'s your name?', 'Where are you from?'];
+
 app.get('/AboutUs', getAboutUs);
 function getAboutUs(req, res){
   res.render('../views/pages/AboutUs');
 }
-// var textgroup=['Thanks so much!','how are you','Good Morning!','Good afternoon!','where are you from','what is going on?','can you help me?','where is restroom?','do you know...?','That\'s awesome!','sorry i cannot..','what is your name?','what language you speak?','do you want a drink?'];
-var textgroup=['Hello','Good morning','Good afternoon','Good evening','Please','Thank you so much!','How are you?','What is your name?','Nice to meet you','Where are you from?','Do you know...?','That\'s awesome!','I\'m sorry','Excuse me...','I don\'t understand','Goodbye'];
+
 var languages=[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic'],['zh-CN','Chinese Simplified'],['nl','Dutch'],['de','German'],['it','Italian'],['hi','Hindi'],['pt','Portugese'],['ru','Russian'],['es','Spanish'],['ja','Japanese'],['ms','Malay'],['ko','Korean'],['fr','French'],['el','Greek'],['tr','Turkish'],['sw','Swahili'],['sv','Swedish']];
 
 app.get('/phrases',getphrases);
@@ -171,7 +172,7 @@ function stay(req,res){
 
 }
 
-var textdialoguegroup =['Greetings','Sports','Food','Weather'];
+var textdialoguegroup =['Greetings','Food','Weather'];
 var change =[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic'],['zh-CN','Chinese Simplified'],['es','Spanish'],['it','Italian'],['hi','Hindi'],['bn','Bengali'],['pt','Portugese'],['ru','Russian'],['ja','Japanese'],['ms','Malay'],['ko','Korean'],['fa','Persian'],['fr','French'],['el','Greek'],['tr','Turkish'],['uk','Ukranian'],['ur','Urdu'],['sw','Swahili']];
 app.get('/dialogue',getdialogue);
 function getdialogue(req,res){
