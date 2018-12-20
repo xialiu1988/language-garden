@@ -55,3 +55,22 @@ console.log(data);
     }
   });
 });
+
+$('.deletebutton').click(function(){
+
+  var $toggle=$(this);
+  var textclass='#delete-'+$toggle.data('id');
+  var data=$(textclass).text();
+console.log(data);
+  $.ajax({
+    type: 'GET',
+    data: {phrase:data},
+    
+    contentType:'application/json',
+    url: '/deletephrases',
+    success: function(data) {
+      console.log('success');
+      console.log(JSON.stringify(data));
+    }
+  });
+});

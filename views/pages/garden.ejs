@@ -12,9 +12,13 @@
       <p><h2>Your Favorite Phrases are Here</h2></p>
  
     <ul>
-       <% phrasegoup.forEach(phr=>{ %>
+       <% phrasegoup.forEach((phr,uid)=>{ %>
      <li>
-      <p class="ph"> <%=phr %></p>
+      <p class="ph" id="delete-<%=uid%>"> <%=phr %></p>
+      <a href="http://www.localhost:3000/phrases">View</a>
+      <form>
+      <button class="deletebutton" type="submit" data-id="<%=uid%>">Delete</button>
+    </form>
     </li>
 
      <% }) %> 
@@ -22,6 +26,8 @@
     
     <canvas id='s'>grass background</canvas>
     <script src="/grass.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="/app.js"></script>
 </body>
    
 </html>
