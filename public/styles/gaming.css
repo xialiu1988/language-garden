@@ -1,0 +1,34 @@
+h1 {
+    font-size: 5vh;
+    text-align: center;
+    margin: 2vw auto;
+    height: 5vh;
+    width: 70%; 
+}
+
+.underscore {
+    border: 1px solid black;
+    font-size: 3vh;
+    text-align: center;
+    margin: 2vw auto;
+    height: 5vh;
+    width: 70%;
+}
+
+.correctletters {
+    border: 1px solid black;
+    font-size: 3vh;
+    text-align: center;
+    margin: 2vw auto;
+    height: 5vh;
+    width: 70%;
+}
+
+.incorrectletters {
+    border: 1px solid black;
+    font-size: 3vh;
+    text-align: center;
+    margin: 2vw auto;
+    height: 5vh;
+    width: 70%;
+}

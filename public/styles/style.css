@@ -1,12 +1,13 @@
 body { 
-    background-color: #000000; 
+    /* background-color: black;  */
     margin: 0px; 
-    overflow: hidden;
+    overflow: auto;
     /* display: block;
     width: 100vw;
     height: 100vh;
     position: fixed; */
  }
+
 .active{
     display: block;
 }
@@ -38,3 +39,27 @@ body {
      width: 5em;
      border: dotted 2px papayawhip;
  }
+
+
+textarea {
+    text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+ }
+
+.text {
+    float: left;
+}
+
+#s {
+    left: 0px;
+    z-index: -1;
+    position: absolute;
+}
+
+#help {
+    z-index: 5;
+    position: absolute;
+}
+
