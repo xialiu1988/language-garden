@@ -32,6 +32,7 @@ var sess;
 app.get('/',(req,res)=>{
   sess=req.session;
   sess.name;
+  sess.phrasegoup;
   res.render('../views/pages/index');
 });
 
@@ -81,9 +82,9 @@ app.post('/login',(req,res)=>{
     result.rows.forEach(item=>{
       if(name===item.username&& pwd===item.pw&&item.phrase){
         phrasegoup.push(item.phrase);
-
       } }
     );
+    sess.phrasegoup=phrasegoup;
     res.render('../views/pages/garden',{data:name,phrasegoup:phrasegoup});
   });
 
@@ -130,7 +131,7 @@ app.get('/savephrases',savethephrase);
 function savethephrase(req,res){
   sess=req.session;
   console.log( req.query);
-
+  sess.phrasegoup.push(req.query.phrase);
   client.query(`SELECT id from users WHERE username='${sess.name}';`,(err,result)=>{
     if (err) {
       console.error(err);
@@ -155,13 +156,21 @@ function savethephrase(req,res){
   });
 }
 
+app.get('/staylogin',stay);
+function stay(req,res){
+  
+  sess=req.session;
+ 
+  res.render('../views/pages/garden',{data:sess.name,phrasegoup:sess.phrasegoup});
 
+}
 
 var textdialoguegroup =['Greetings','Sports','Food','Weather'];
 var change =[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic'],['zh-CN','Chinese Simplified'],['es','Spanish'],['it','Italian'],['hi','Hindi'],['bn','Bengali'],['pt','Portugese'],['ru','Russian'],['ja','Japanese'],['ms','Malay'],['ko','Korean'],['fa','Persian'],['fr','French'],['el','Greek'],['tr','Turkish'],['uk','Ukranian'],['ur','Urdu'],['sw','Swahili']];
 app.get('/dialogue',getdialogue);
 function getdialogue(req,res){
-  res.render('../views/pages/dialogue',{textarr:textdialoguegroup,langs:change});
+  sess=req.session;
+  res.render('../views/pages/dialogue',{data:sess.name,textarr:textdialoguegroup,langs:change});
 }
 
 
