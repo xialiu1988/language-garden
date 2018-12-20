@@ -36,25 +36,6 @@ app.get('/',(req,res)=>{
 });
 
 
-app.post('/login',(req,res)=>{
-  var name=req.body.username;
-  var pwd=req.body.password;
-  console.log(name,pwd);
-  return client.query(`SELECT username,pw from users WHERE username='${name}';`,function(err,result){
-    console.log(result.rows);
-    result.rows.forEach(item=>{
-      if(name===item.username&& pwd===item.pw){
-        res.render('../views/pages/garden',{data:name});
-      }
-      else{
-        res.render('../views/pages/error');
-      }
-    });
-    res.render('../views/pages/error');
-  }
-  );
-});
-
 
 //if new user, create an count, pwd hast to be '123'
 var race=['white/Caucasian','African Americans','Mongoloid/Asian','Australoid','other'];
@@ -172,8 +153,11 @@ function savethephrase(req,res){
       });
     }
   });
+}
 
-var textdialoguegroup =['Greetings','Sports','Food','Weather']
+
+
+var textdialoguegroup =['Greetings','Sports','Food','Weather'];
 var change =[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic'],['zh-CN','Chinese Simplified'],['es','Spanish'],['it','Italian'],['hi','Hindi'],['bn','Bengali'],['pt','Portugese'],['ru','Russian'],['ja','Japanese'],['ms','Malay'],['ko','Korean'],['fa','Persian'],['fr','French'],['el','Greek'],['tr','Turkish'],['uk','Ukranian'],['ur','Urdu'],['sw','Swahili']];
 app.get('/dialogue',getdialogue);
 function getdialogue(req,res){
@@ -188,9 +172,10 @@ function getdialogue(req,res){
 
 
 
-// app.get('*', (req, res) => {
-//   res.redirect('/error');
-// });
+app.get('*', (req, res) => {
+  res.redirect('/error');
+});
+
 app.listen(PORT, () => {
   console.log(`listening port ${PORT}.`);
 });
