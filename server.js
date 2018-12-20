@@ -7,7 +7,7 @@ app.engine('html', require('ejs').renderFile);
 const PORT=process.env.PORT||3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(session({secret: 'sh'}));
+app.use(session({secret:'ssshhhhh'}));
 
 app.use(express.static('./public'));
 require('dotenv').config();
@@ -81,7 +81,7 @@ app.post('/login',(req,res)=>{
     result.rows.forEach(item=>{
       if(name===item.username&& pwd===item.pw&&item.phrase){
         phrasegoup.push(item.phrase);
-      
+
       } }
     );
     res.render('../views/pages/garden',{data:name,phrasegoup:phrasegoup});
@@ -121,12 +121,33 @@ function getphrases(req,res){
 
 //use can choose the phraes he/she likes saving it to the database
 
-app.post('/savephrases',savethephrase);
+app.get('/savephrases',savethephrase);
 function savethephrase(req,res){
+  sess=req.session;
+  console.log( req.query);
 
-  var obj = {};
-	console.log('body: ' + JSON.stringify(req.body));
-	res.send(req.body);
+  client.query(`SELECT id from users WHERE username='${sess.name}';`,(err,result)=>{
+    if (err) {
+      console.error(err);
+      res.redirect('/error');
+    }
+
+    else{
+      let SQL= 'INSERT INTO phrases (phrase,users_id) values ($1,$2)';
+      let values=[req.query.phrase,result.rows[0].id];
+
+      return client.query(SQL, values,(err,result)=>{
+        if (err) {
+          console.error(err);
+          res.redirect('/error');
+        }
+
+        else{
+          res.render('../views/pages/phrase',{data:sess.name,textarr:textgroup,langs:languages});
+        }
+      });
+    }
+  });
 
 }
 

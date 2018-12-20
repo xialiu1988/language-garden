@@ -6,6 +6,7 @@ $(document).ready(function(){
     var $toggle=$(this);
     var textid='#text-'+$toggle.data('id');
     var tarid='#phrases-'+$toggle.data('id');
+    console.log($(tarid).val());
     var url = 'https://translation.googleapis.com/language/translate/v2?key=AIzaSyATyAPRLeJ6PjtZ0E7i1ZrB-ymt9t1kWpQ';
     url += '&source=' + 'en';
     url += '&target=' + $(tarid).val();
@@ -38,13 +39,14 @@ $('.savebutton').click(function(){
 
   var $toggle=$(this);
   var textclass='.save-'+$toggle.data('id');
-  var data=textclass.val();
-
+  var data=$(textclass).val();
+console.log(data);
   $.ajax({
-    type: 'POST',
-    data: JSON.stringify(data),
-    contentType: 'application/json',
-    url: 'http://localhost:3000/savephrases',
+    type: 'GET',
+    data: {phrase:data},
+    
+    contentType:'application/json',
+    url: '/savephrases',
     success: function(data) {
       console.log('success');
       console.log(JSON.stringify(data));
