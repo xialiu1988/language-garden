@@ -7,7 +7,7 @@ $(document).ready(function(){
 
     var textid='#text-'+$toggle.data('id');
     var tarid='#phrases-'+$toggle.data('id');
-    var url = 'https://translation.googleapis.com/language/translate/v2?key=AIzaSyATyAPRLeJ6PjtZ0E7i1ZrB-ymt9t1kWpQ';
+    var url = 'https://translation.googleapis.com/language/translate/v2?key=AIzaSyCu_L955TWKLiDJdqI61-3xf5M_Ankyh44';
     url += '&source=' + 'en';
     url += '&target=' + $(tarid).val();
     url += '&q=' + escape($(textid).val());

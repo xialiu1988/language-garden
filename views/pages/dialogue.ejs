@@ -10,29 +10,27 @@
              <% textarr.forEach((text,uid)=>{ %>
                <li>
                   <p><%= text %></p>
-                  <button class='dbtn' type='submit' id="add-<%= uid %>">Add</button> 
-                  
-                 
-                </li>
-      
-               <% }) %>     
-           
-
-           <form action='/dialogue-translate' method='GET'>
+                  <form>
+                  <textarea id="text-<%=uid%>" type="text"  name="ps"><%= text %></textarea> 
+                  <button class='dbtn' id="add-<%= uid %>">Add</button>
+                  <button class='form' type="button" id="<%=uid%>" data-id="<%= uid %>">Translate</button> 
+                
           
-            <select name='dialoguelist' id='dialogue'>
+            <select name='dialoguelist' id='dialogue-<%=uid%>'>
                <% langs.forEach(lang=>{ %>
                   <option value="<%= lang[0] %>">
                      <%= lang[1] %>
                   </option>
-      
+
                   <% }) %>     
             </select>  
-
-           
-   </li>
+            <textarea id="textq-<%=uid%>" type="text"  name="pss"></textarea>  
+</form>
+</li>
+<% }) %>     
      
 </ul>
+
 
 
 <p class="dialoguebox" id='greeting'>
