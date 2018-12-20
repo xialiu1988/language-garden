@@ -12,22 +12,22 @@ $(document).ready(function() {
     e.preventDefault();
 
   });
+  // $('#add-1').on('click', function(e) {
+  //   $('.dialoguebox').hide();
+  //   // $('#sports').show();
+  //   $('#textq-1').val($('#sports').text());
+  //   e.preventDefault();
+  // });
   $('#add-1').on('click', function(e) {
     $('.dialoguebox').hide();
-    // $('#sports').show();
-    $('#textq-1').val($('#sports').text());
+    // $('#food').show();
+    $('#textq-1').val($('#food').text());
     e.preventDefault();
   });
   $('#add-2').on('click', function(e) {
     $('.dialoguebox').hide();
-    // $('#food').show();
-    $('#textq-2').val($('#food').text());
-    e.preventDefault();
-  });
-  $('#add-3').on('click', function(e) {
-    $('.dialoguebox').hide();
     // $('#weather').show();
-    $('#textq-3').val($('#weather').text());
+    $('#textq-2').val($('#weather').text());
     e.preventDefault();
   });
 

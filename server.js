@@ -164,7 +164,7 @@ function stay(req,res){
 
 }
 
-var textdialoguegroup =['Greetings','Sports','Food','Weather'];
+var textdialoguegroup =['Greetings','Food','Weather'];
 var change =[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic'],['zh-CN','Chinese Simplified'],['es','Spanish'],['it','Italian'],['hi','Hindi'],['bn','Bengali'],['pt','Portugese'],['ru','Russian'],['ja','Japanese'],['ms','Malay'],['ko','Korean'],['fa','Persian'],['fr','French'],['el','Greek'],['tr','Turkish'],['uk','Ukranian'],['ur','Urdu'],['sw','Swahili']];
 app.get('/dialogue',getdialogue);
 function getdialogue(req,res){
