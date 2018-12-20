@@ -6,32 +6,16 @@ h1 {
     width: 70%; 
 }
 
-.underscore {
-    border: 1px solid black;
+.underscore, .correctletters, .incorrectletters {
+    border: 1px solid aqua;
     font-size: 3vh;
     text-align: center;
     margin: 2vw auto;
     height: 5vh;
     width: 70%;
+    padding: 2vw;
 }
-
-.correctletters {
-    border: 1px solid black;
-    font-size: 3vh;
-    text-align: center;
-    margin: 2vw auto;
-    height: 5vh;
-    width: 70%;
-}
-
-.incorrectletters {
-    border: 1px solid black;
-    font-size: 3vh;
-    text-align: center;
-    margin: 2vw auto;
-    height: 5vh;
-    width: 70%;
-}
+/* based on code from https://codepen.io/carsy/pen/VvqJwm */
 
 body {
     color: white;
