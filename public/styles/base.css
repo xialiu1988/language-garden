@@ -12,6 +12,7 @@
   header {
     margin-bottom: 10vh;
   }
+  
   body {
     background-color: #999;
     color: white;
@@ -24,27 +25,36 @@
     position: center;
     font-size: 6vw;
     text-align: center;
+
     /* margin-left: 4vw; */
     line-height: 10vw;
     font-family: 'Shadows Into Light', cursive;
+    text-shadow: .5vw 0 black;
     /* font-family: "Oldenburg", cursive; */
   }
   
   h2{
     /* font-family: 'ZCOOL KuaiLe', cursive; */
-    font-size: 4vw;
-    margin-bottom: 3vh;
+    font-size: 3vw;
 }
+
 .username,.password{
+  font-size: vw;
+  margin: 1vw;
     /* font-family: 'Skranji', cursive; */
 }
 
 h6{
-  float: left;
+    position: absolute;
+    float: left;
     font-size: 1.2vw;
     /* font-family: 'ZCOOL KuaiLe', cursive; */
 }
 
+nav{
+  margin-top: 12vh;
+  margin-bottom: 5vh;
+}
 .dialougebox {
   border-style: double;
 }
@@ -53,21 +63,25 @@ ul {
   text-align: center;
 }
 
+#loginbox{
+  display: grid;
+  padding-top: 10vh;
+}
+
 #loginform {
   font-size: 2vw;
-  border: 1px solid red;
   display: grid;
 }
 
 #signupform {
-  border: 1px solid red;
   display: grid;
 }
 
 a {
+  text-decoration: none;
   color: white;
   /* border: 1px solid red; */
-  margin: 4vw;
+  margin: 2vw;
   padding: 1vw;
   font-size: 1.5vw;
   
@@ -75,15 +89,30 @@ a {
 
 .submitbtn {
   margin: 1vw auto 0 auto;
-  width: 5vw;
+  width: 8vw;
   display: grid;
 }
 
 a:hover {
   border-radius: 20%;
-  background-color: blue;
+  background-color: rgb(99, 185, 106);
   border: none;
   text-align: center;
   font-size: 1.5vw;
   transition: all 0.5s;
+}
+
+input {
+  border: none;
+  padding: 1vw;
+  border-radius: 5%;
+}
+
+#phrasebox {
+  color: white;
+  background-color: rgb(92, 90, 90, .4);
+  /* border: 1px solid black; */
+  padding: 3vw;
+  margin-left: auto;
+  margin-right: auto;
 }

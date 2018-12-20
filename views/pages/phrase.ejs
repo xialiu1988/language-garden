@@ -15,7 +15,7 @@
       <% textarr.forEach((text,uid)=>{ %>
          <li>
 
-            <!-- <div class="grid-container"> -->
+            <div class="grid-container">
                <div class="grid-item">
                <form>
                <textarea class="save-save-<%=uid%>" id="text-<%=uid%>" type="text"  name="ps"><%= text %></textarea>    
@@ -41,9 +41,11 @@
               <form>
                <button class="savebutton" type="submit" data-id="save-<%=uid%>">SAVE</button>
               </form>
+              </div>
 
+              <div class="grid-item">
               <textarea id="textq-<%=uid%>" type="text"  name="pss"></textarea>    
-
+              </div>
 
            
               </div> 
@@ -74,5 +76,7 @@
   -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script type="text/javascript" src="/app.js"></script>
+  <canvas id='s'>grass background</canvas>
+   <script src="/grass.js"></script>
 </body>
 </html>

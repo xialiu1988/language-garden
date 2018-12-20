@@ -2,13 +2,13 @@
 <html>
 
    <%- include('.././layout/head') %>
-
+<hr class="linerule">
 <body>
   
-    <h6>Hello, <%=data%>!<br>Welcome ON Board!<br><a class="logout" href="/logout">LOGOUT</a></h6>
+    <h6>Hello, <%=data%>!<br>Welcome on Board!<br><a class="logout" href="/logout">Logout</a></h6>
     <%- include('.././layout/header') %>
-
  
+    <div id='phrasebox'>
       <p><h2>Your Favorite Phrases are Here</h2></p>
  
     <ul>
@@ -19,7 +19,7 @@
 
      <% }) %> 
     </ul>
-    
+  </div>
     <canvas id='s'>grass background</canvas>
     <script src="/grass.js"></script>
 </body>
