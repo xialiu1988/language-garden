@@ -40,11 +40,11 @@ $('.deletebutton').click(function(){
   var $toggle=$(this);
   var textclass='#delete-'+$toggle.data('id');
   var data=$(textclass).text();
-console.log(data);
+  console.log(data);
   $.ajax({
     type: 'GET',
     data: {phrase:data},
-    
+
     contentType:'application/json',
     url: '/deletephrases',
     success: function(data) {
@@ -60,11 +60,12 @@ $('.savebutton').click(function(){
   var $toggle=$(this);
   var textclass='.save-'+$toggle.data('id');
   var data=$(textclass).val();
-console.log(data);
+  console.log(data);
+ 
   $.ajax({
     type: 'GET',
     data: {phrase:data},
-    
+
     contentType:'application/json',
     url: '/savephrases',
     success: function(data) {
