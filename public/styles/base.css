@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light");
-
-
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url("https://fonts.googleapis.com/css?family=Oldenburg");
+@import url("https://fonts.googleapis.com/css?family=Audiowide|Berkshire+Swash|Finger+Paint|Fontdiner+Swanky|Freckle+Face|Fredericka+the+Great|Love+Ya+Like+A+Sister|Schoolbell|Special+Elite|Syncopate|Unkempt|ZCOOL+KuaiLe");
   html {
     min-height: 150vw;
     position: relative;
@@ -39,9 +40,11 @@ h2{
 
 .username,.password{
   margin: 1vw;
+  
 }
 
 h6{
+  font-family: 'Fontdiner+Swanky', cursive; 
     position: absolute;
     float: left;
     font-size: 1.2vw;
@@ -50,6 +53,7 @@ h6{
 nav{
   margin-top: 15vh;
   margin-bottom: 4vh;
+  font-family: 'Syncopate', sans-serif;
 }
 .dialougebox {
   border-style: double;
@@ -87,8 +91,26 @@ a {
   margin: 1vw auto 0 auto;
   width: 8vw;
   display: grid;
+  font-family: 'Audiowide', cursive; 
+  background-color:rgb(104, 126, 250);
+  width: 10%;
+  height: 2vw;
+  font-size:1.1vw;
+  color:rgb(245, 240, 237);
+  font-weight:bold;
+   border-radius:10px;
 }
 
+.deletebutton{
+  font-family: 'Love Ya Like A Sister', cursive;
+  background-color:black;
+  width: 30%;
+  height: 2vw;
+  font-size:1.1vw;
+  color:white;
+  font-weight:bold;
+   border-radius:10px;
+}
 a:hover {
   border-radius: 20%;
   color: white;
@@ -115,10 +137,29 @@ input {
 }
 
 .savebutton {
-  margin-top: 1vh;
-  margin-left: 48%;
+  /* margin-top: 1vh;
+  margin-left: 48%; */
+  width: 10%;
+  height: 1.7vw;
+  color:white;
+  font-size: 1.1vw;
+  font-family: 'Schoolbell', cursive;
+  background-color:rgb(228, 106, 36);
+}
+.formbutton{
+  width: 20%;
+  height: 1.6vw;
+  color:white;
+  font-size: 1.1vw;
+  font-family: 'Finger Paint', cursive;
+  background-color:rgb(26, 26, 27);
 }
 
 #redtext {
   color: red; 
+}
+.ph{
+  font-size: 1.3vw;
+  font-family: 'Finger Paint', cursive;
+
 }
