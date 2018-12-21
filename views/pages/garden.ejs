@@ -5,7 +5,7 @@
 
 <body>
   
-    <h6>Hello, <%=data%>!<br>Welcome on Board!<br><a class="logout" href="/logout">Logout</a></h6>
+    <h6>Hello, <%=data%>!<br>Welcome on Board<br><a class="logout" href="/logout">Logout</a></h6>
     <%- include('.././layout/header') %>
  
     <div id='phrasebox'>
@@ -13,14 +13,15 @@
       <br>
  
     <ul>
+      
        <% phrasegoup.forEach((phr,uid)=>{ %>
-     <li>
+     <li> <br>
       <!-- <p class="ph" id="delete-<%=uid%>"> <%=phr %></p> -->
      
       <form>
           <p class="ph" id="delete-<%=uid%>"> <%=phr %></p>
           <!-- <input type="hidden" name="_method" value="DELETE" /> -->
-      <button class="deletebutton" type="submit" data-id="<%=uid%>">Delete</button>
+      <button class="deletebutton" type="submit" data-id="<%=uid%>">Delete</button><br>
       <a href="http://www.localhost:3000/phrases">View</a>
     </form>
     </li>

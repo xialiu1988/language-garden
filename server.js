@@ -39,7 +39,7 @@ app.get('/',(req,res)=>{
 
 
 //if new user, create an count, pwd hast to be '123'
-var race=['white/Caucasian','African Americans','Mongoloid/Asian','Australoid','other'];
+var race=['American Indian','Black/African American','Mongoloid/Asian','Hispanic/Latino','White/Caucasian','other'];
 app.get('/signup',dosignup);
 function dosignup(req,res){
   res.render('../views/pages/signup',{race:race});
