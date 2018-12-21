@@ -14,10 +14,11 @@
   }
   
   body {
-    background-color: #999;
-    color: white;
+    /* background-color: #999; */
+    margin: 0;
+    height: 100%;
     text-align: center;
-    overflow: auto;
+    overflow: hidden;
     /* font-family: "Nunito", sans-serif; */
   }
 
@@ -52,8 +53,8 @@ h6{
 }
 
 nav{
-  margin-top: 12vh;
-  margin-bottom: 5vh;
+  margin-top: 15vh;
+  margin-bottom: 4vh;
 }
 .dialougebox {
   border-style: double;

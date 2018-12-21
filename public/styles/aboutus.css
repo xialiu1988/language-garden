@@ -1,20 +1,24 @@
 
-
-
-
 body{
-    background: rgba(219,127,8, 0.7);
-    background-image: url()
+    background: rgba(1, 18, 51, 0.7);
+    height: 100%;
+}
+
+main {
+    position: fixed;
+    overflow-y: scroll;
+    top: 0; right: 0; left: 0; bottom: 0;
 }
 /* PART 1 */
-body{
-    background-image: url("/kw.jpg")
-}
+
 .view {
     width: 300px;
     height: 300px;
-    margin: 10px;
-    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    /* float: left; */
     border: 10px solid white;
     overflow: hidden;
     position: relative;
@@ -36,7 +40,7 @@ div {
 }
 .view img {
     display: block;
-    position: relative
+    position: relative;
 }
 .view h3 {
     text-transform: uppercase;
@@ -66,7 +70,7 @@ div {
 }
 .view-first .mask {
     opacity: 0;
-    background-color: rgba(219,127,8, 0.7); 
+    background-color: rgba(99, 185, 106, .4); 
     transition: all 0.4s ease-in-out;
 }
 .view-first h3 {
