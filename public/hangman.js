@@ -18,7 +18,7 @@ setInterval(function() {
 
 //based on demo from https://www.youtube.com/watch?v=f5BbzXgvi1o
 
-const greetingsArray = ['hola','jambo','ola'];
+const greetingsArray = ['jambo'];
 //generate random greeting
 let randomized = Math.floor(Math.random() * greetingsArray.length);
 let selectedWord = greetingsArray[randomized];
