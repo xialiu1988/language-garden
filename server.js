@@ -108,14 +108,16 @@ app.get('/logout',(req,res)=>{
 
 app.get('/game', getgame);
 function getgame(req, res){
-  res.render('../views/pages/game');
+  sess=req.session;
+  res.render('../views/pages/game',{data:sess.name});
 }
 
 var textgroup=['Hello, how are you?', 'What is your name?', 'What time is it?'];
 
 app.get('/AboutUs', getAboutUs);
 function getAboutUs(req, res){
-  res.render('../views/pages/AboutUs');
+  sess=req.session;
+  res.render('../views/pages/AboutUs',{data:sess.name});
 }
 
 var languages=[['af','Afrikaans'],['sq','Albanian'],['ar','Arabic'],['zh-CN','Chinese Simplified'],['nl','Dutch'],['de','German'],['it','Italian'],['hi','Hindi'],['pt','Portugese'],['ru','Russian'],['es','Spanish'],['ja','Japanese'],['ms','Malay'],['ko','Korean'],['fr','French'],['el','Greek'],['tr','Turkish'],['sw','Swahili'],['sv','Swedish']];
