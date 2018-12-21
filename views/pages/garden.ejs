@@ -15,10 +15,13 @@
     <ul>
        <% phrasegoup.forEach((phr,uid)=>{ %>
      <li>
-      <p class="ph" id="delete-<%=uid%>"> <%=phr %></p>
-      <a href="http://www.localhost:3000/phrases">View</a>
+      <!-- <p class="ph" id="delete-<%=uid%>"> <%=phr %></p> -->
+     
       <form>
+          <p class="ph" id="delete-<%=uid%>"> <%=phr %></p>
+          <!-- <input type="hidden" name="_method" value="DELETE" /> -->
       <button class="deletebutton" type="submit" data-id="<%=uid%>">Delete</button>
+      <a href="http://www.localhost:3000/phrases">View</a>
     </form>
     </li>
 
