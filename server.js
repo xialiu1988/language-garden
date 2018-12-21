@@ -111,7 +111,7 @@ function getgame(req, res){
   res.render('../views/pages/game');
 }
 
-var textgroup=['Hello, how are you?', 'What\'s your name?', 'Where are you from?'];
+var textgroup=['Hello, how are you?', 'What is your name?', 'Where are you from?'];
 
 app.get('/AboutUs', getAboutUs);
 function getAboutUs(req, res){

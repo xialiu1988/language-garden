@@ -1,7 +1,7 @@
 body { 
     /* background-color: black;  */
     margin: 0px; 
-    overflow: auto;
+    overflow: hidden;
     /* display: block;
     width: 100vw;
     height: 100vh;
