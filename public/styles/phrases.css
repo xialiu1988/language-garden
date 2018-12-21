@@ -1,3 +1,5 @@
+
+@import url("https://fonts.googleapis.com/css?family=Audiowide|Berkshire+Swash|Finger+Paint|Fontdiner+Swanky|Freckle+Face|Fredericka+the+Great|Love+Ya+Like+A+Sister|Schoolbell|Special+Elite|Syncopate|Unkempt|ZCOOL+KuaiLe");
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -16,5 +18,19 @@
     text-align: center;
   }
 
-
-  
+.form{
+  width: 20%;
+  height: 2vw;
+  color:white;
+  font-size: 1.2vw;
+  font-family: 'Finger Paint', cursive;
+  background-color:rgb(26, 26, 27);
+}
+.dbtn{
+  width: 20%;
+  height: 2vw;
+  color:white;
+  font-size: 1vw;
+  font-family: 'Schoolbell', cursive;
+  background-color:rgb(228, 106, 36);
+}
