@@ -44,7 +44,7 @@ h2{
 }
 
 h6{
-  font-family: 'Fontdiner+Swanky', cursive; 
+  /* font-family: 'Fontdiner+Swanky', cursive;  */
     position: absolute;
     float: left;
     font-size: 1.2vw;
@@ -91,7 +91,7 @@ a {
   margin: 1vw auto 0 auto;
   width: 8vw;
   display: grid;
-  font-family: 'Audiowide', cursive; 
+  /* font-family: 'Audiowide', cursive;  */
   background-color:rgb(104, 126, 250);
   width: 10%;
   height: 2vw;
@@ -102,13 +102,13 @@ a {
 }
 
 .deletebutton{
-  font-family: 'Love Ya Like A Sister', cursive;
+  /* font-family: 'Love Ya Like A Sister', cursive;  */
   background-color:black;
   width: 30%;
   height: 2vw;
   font-size:1.1vw;
   color:white;
-  font-weight:bold;
+  /* font-weight:bold; */
    border-radius:10px;
 }
 a:hover {
@@ -138,28 +138,26 @@ input {
 
 .savebutton {
   /* margin-top: 1vh;
-  margin-left: 48%; */
-  width: 10%;
-  height: 1.7vw;
+  margin-left: 32%;  */
+  width: 20%;
+  height: 1.6vw;
   color:white;
   font-size: 1.1vw;
-  font-family: 'Schoolbell', cursive;
-  background-color:rgb(228, 106, 36);
+  /* font-family: 'Schoolbell', cursive; */
+  background-color:rgb(104, 126, 250);
+  
 }
 .formbutton{
   width: 20%;
   height: 1.6vw;
   color:white;
   font-size: 1.1vw;
-  font-family: 'Finger Paint', cursive;
+  /* font-family: 'Finger Paint', cursive; */
   background-color:rgb(26, 26, 27);
 }
 
-#redtext {
-  color: red; 
-}
 .ph{
   font-size: 1.3vw;
-  font-family: 'Finger Paint', cursive;
+  /* font-family: 'Finger Paint', cursive; */
 
 }
