@@ -52,6 +52,7 @@ console.log(data);
       console.log(JSON.stringify(data));
     }
   });
+  alert('It\'s gone now.');
 });
 //save button
 $('.savebutton').click(function(){
@@ -71,6 +72,7 @@ console.log(data);
       console.log(JSON.stringify(data));
     }
   });
+  alert('You have saved this one. Go and check your home page.');
 });
 
 
