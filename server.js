@@ -50,9 +50,9 @@ function dosignup(req,res){
 app.post('/signup',filloutform);
 function filloutform(req,res){
   var name=req.body.user;
-  var pwd=req.body.pw;
-  let SQL = 'INSERT INTO users (username,pw) values ($1,$2)';
-  let values = [name,pwd];
+  // var pwd=req.body.pw;
+  let SQL = 'INSERT INTO users (username) values ($1)';
+  let values = [name];
   client.query(SQL, values,(err,result)=>{
     if (err) {
       console.error(err);
@@ -72,7 +72,7 @@ function filloutform(req,res){
 
 app.post('/login',(req,res)=>{
   var name=req.body.username;
-  var pwd=req.body.password;
+  // var pwd=req.body.password;
   var phrasegoup=[];
 
   sess=req.session;
@@ -80,14 +80,14 @@ app.post('/login',(req,res)=>{
 
   return client.query('SELECT * FROM users,phrases WHERE users.id=phrases.users_id;',function(err,result){
     result.rows.forEach(item=>{
-      if(name===item.username&& pwd===item.pw&&item.phrase){
+      if(name===item.username&&item.phrase){
         phrasegoup.push(item.phrase);
-        
+
       } }
     );
     sess.phrasegoup=phrasegoup;
-    console.log(phrasegoup);
-    res.render('../views/pages/garden',{data:name,phrasegoup:phrasegoup});
+    // console.log(phrasegoup);
+    res.render('../views/pages/garden',{data:sess.name,phrasegoup:phrasegoup});
   });
 
 });
@@ -111,7 +111,7 @@ function getgame(req, res){
   res.render('../views/pages/game');
 }
 
-var textgroup=['Hello, how are you?', 'What\'s your name?', 'Where are you from?'];
+var textgroup=['Hello, how are you?', 'What is your name?', 'Where are you from?'];
 
 app.get('/AboutUs', getAboutUs);
 function getAboutUs(req, res){
@@ -184,24 +184,22 @@ function getdialogue(req,res){
 app.get('/deletephrases',deleteit);
 function deleteit(req,res){
   sess=req.session;
-  console.log(sess);
-  client.query(`SELECT id from users WHERE username='${sess.name}';`,function(err,result){
-    console.log( result.rows[0].id);
-    console.log(req.query.phrase);
-    console.log(`DELETE FROM phrases WHERE phrase='${req.query.phrase.trim()}' AND users_id=${result.rows[0].id};`);
-    return client.query(`DELETE FROM phrases WHERE phrase='${req.query.phrase.trim()}' AND users_id=${result.rows[0].id};`)
-
-      .then( result => {
-        console.log(result);
+  client.query(`SELECT id from users WHERE username='${sess.name}';`, function(err,result){
+    return client.query(`DELETE FROM phrases WHERE phrase='${req.query.phrase.trim()}' AND users_id=${result.rows[0].id};`,(err,result)=>{
+      if (err) {
+        console.error(err);
+        res.redirect('/error');
+      }
+      else{
         console.log(sess.phrasegoup);
         var index=sess.phrasegoup.indexOf(req.query.phrase);
         sess.phrasegoup.splice(index,1);
         console.log(sess.phrasegoup);
         res.render('../views/pages/garden',{data:sess.name,phrasegoup:sess.phrasegoup});
-      })
-      .catch(err=>console.error(err));
+      }
+    });
   });
- 
+
 }
 
 
