@@ -26,7 +26,6 @@ const translate = new Translate({
   projectId: projectId,
 });
 
-
 var sess;
 //very first page wait for log in/ signup
 app.get('/',(req,res)=>{
